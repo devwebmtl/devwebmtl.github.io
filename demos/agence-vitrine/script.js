@@ -73,46 +73,16 @@ document.getElementById("lang-btn-mobile")?.addEventListener("click",
 );
 
 // ===== CONTACT FORM =====
-const form     = document.getElementById("contact-form");
-const formMsg  = document.getElementById("form-msg");
-const honeypot = document.getElementById("website");
-let submitCount = parseInt(sessionStorage.getItem("sc") || "0");
+// ===== CONTACT FORM — MODE DÉMO (envoi désactivé) =====
+const form = document.getElementById("contact-form");
+const formMsg = document.getElementById("form-msg");
 
-form?.addEventListener("submit", async e => {
+form?.addEventListener("submit", e => {
   e.preventDefault();
-  if (honeypot?.value) return;
-  if (submitCount >= 3) {
-    formMsg.className = "form-msg error";
-    formMsg.textContent = lang === "fr"
-      ? "⚠️ Trop de tentatives. Réessayez plus tard."
-      : "⚠️ Too many attempts. Please try again later.";
-    return;
-  }
-  const btn = form.querySelector("button[type=submit]");
-  btn.disabled = true;
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-  try {
-    const res = await fetch(form.action, {
-      method: "POST", body: new FormData(form),
-      headers: { Accept: "application/json" }
-    });
-    if (res.ok) {
-      formMsg.className = "form-msg success";
-      formMsg.textContent = lang === "fr"
-        ? "✅ Demande envoyée ! Nous vous répondons sous 24h."
-        : "✅ Request sent! We'll get back to you within 24h.";
-      form.reset();
-      submitCount++;
-      sessionStorage.setItem("sc", submitCount);
-    } else throw new Error();
-  } catch {
-    formMsg.className = "form-msg error";
-    formMsg.textContent = lang === "fr"
-      ? "❌ Erreur d'envoi. Réessayez."
-      : "❌ Send error. Please try again.";
-  }
-  btn.disabled = false;
-  btn.innerHTML = lang === "fr"
-    ? '<i class="fas fa-paper-plane"></i> Envoyer ma demande'
-    : '<i class="fas fa-paper-plane"></i> Send my request';
+  formMsg.className = "form-msg error";
+  formMsg.innerHTML = lang === "fr"
+    ? "⚠️ <strong>Mode démo</strong> — L'envoi est désactivé sur cette version de démonstration."
+    : "⚠️ <strong>Demo mode</strong> — Sending is disabled on this demo version.";
 });
+
+

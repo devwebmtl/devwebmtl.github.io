@@ -516,10 +516,17 @@
             <div style="display:none;" aria-hidden="true">
               <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
             </div>
-            <button type="submit" class="btn btn-primary btn-full">
-              <i class="fas fa-paper-plane"></i>
-              <span data-fr="Envoyer ma demande" data-en="Send my request">Envoyer ma demande</span>
-            </button>
+
+
+
+            <button type="button" class="btn btn-primary btn-full" onclick="
+                document.getElementById('form-msg').innerHTML='⚠️ <strong>Mode démo</strong> — Formulaire désactivé.';
+                document.getElementById('form-msg').style.color='#f59e0b';">
+  <i class="fas fa-paper-plane"></i>
+  <span data-fr="Envoyer ma demande" data-en="Send my request">Envoyer ma demande</span>
+</button>
+
+
             <div id="form-msg" class="form-msg"></div>
           </form>
         </div>
