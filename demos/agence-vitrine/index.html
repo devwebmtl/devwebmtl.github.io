@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VelixoxoWeb — Agence web spécialisée en création de sites modernes, e-commerce et applications web sur mesure à Montréal." />
+  <title>VelixoxoWeb | Agence Web Montréal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">Velixoxo<span>Web</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services"     data-fr="Services"        data-en="Services">Services</a></li>
+        <li><a href="#portfolio"    data-fr="Réalisations"    data-en="Portfolio">Réalisations</a></li>
+        <li><a href="#pricing"      data-fr="Tarifs"          data-en="Pricing">Tarifs</a></li>
+        <li><a href="#testimonials" data-fr="Avis"            data-en="Reviews">Avis</a></li>
+        <li><a href="#contact" class="nav-cta" data-fr="Démarrer un projet" data-en="Start a project">Démarrer un projet</a></li>
+        <li><button class="lang-btn" id="lang-btn">🇬🇧 EN</button></li>
+      </ul>
+      <div class="nav-right">
+        <button class="lang-btn-mobile" id="lang-btn-mobile">🇬🇧 EN</button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-orb orb1"></div>
+      <div class="hero-orb orb2"></div>
+      <div class="hero-orb orb3"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-bolt"></i>
+          <span data-fr="Agence Web #1 à Montréal" data-en="Montréal's #1 Web Agency">Agence Web #1 à Montréal</span>
+        </div>
+        <h1 data-fr="Des sites web qui <span>convertissent</span> vos visiteurs en clients"
+            data-en="Websites that <span>convert</span> your visitors into clients">
+          Des sites web qui <span>convertissent</span> vos visiteurs en clients
+        </h1>
+        <p data-fr="Nous créons des expériences digitales sur mesure — rapides, modernes et optimisées pour générer des résultats concrets pour votre business."
+           data-en="We craft custom digital experiences — fast, modern and optimized to generate real results for your business.">
+          Nous créons des expériences digitales sur mesure — rapides, modernes et optimisées pour générer des résultats concrets pour votre business.
+        </p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn btn-primary">
+            <i class="fas fa-rocket"></i>
+            <span data-fr="Démarrer mon projet" data-en="Start my project">Démarrer mon projet</span>
+          </a>
+          <a href="#portfolio" class="btn btn-outline">
+            <i class="fas fa-eye"></i>
+            <span data-fr="Voir nos réalisations" data-en="See our work">Voir nos réalisations</span>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong>50+</strong>
+            <span data-fr="Projets livrés" data-en="Projects delivered">Projets livrés</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <strong>98%</strong>
+            <span data-fr="Clients satisfaits" data-en="Satisfied clients">Clients satisfaits</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <strong>24h</strong>
+            <span data-fr="Délai de réponse" data-en="Response time">Délai de réponse</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat">
+            <strong>5★</strong>
+            <span data-fr="Note moyenne" data-en="Average rating">Note moyenne</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#services" class="hero-scroll"><i class="fas fa-chevron-down"></i></a>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-fr="Ce qu'on fait" data-en="What we do">Ce qu'on fait</span>
+        <h2 data-fr="Nos <span>Services</span>" data-en="Our <span>Services</span>">Nos <span>Services</span></h2>
+        <p data-fr="Des solutions digitales complètes pour propulser votre business en ligne"
+           data-en="Complete digital solutions to propel your business online">
+          Des solutions digitales complètes pour propulser votre business en ligne
+        </p>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card fade-up">
+          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3 data-fr="Site Vitrine" data-en="Showcase Website">Site Vitrine</h3>
+          <p data-fr="Un site web professionnel qui reflète l'identité de votre marque et attire vos clients idéaux."
+             data-en="A professional website that reflects your brand identity and attracts your ideal clients.">
+            Un site web professionnel qui reflète l'identité de votre marque et attire vos clients idéaux.
+          </p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i><span data-fr="Design responsive & moderne" data-en="Responsive & modern design">Design responsive & moderne</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Optimisation SEO" data-en="SEO optimization">Optimisation SEO</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Formulaire de contact" data-en="Contact form">Formulaire de contact</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Livraison en 7 jours" data-en="Delivered in 7 days">Livraison en 7 jours</span></li>
+          </ul>
+          <a href="#contact" class="service-link" data-fr="En savoir plus →" data-en="Learn more →">En savoir plus →</a>
+        </div>
+
+        <div class="service-card featured fade-up">
+          <div class="service-badge" data-fr="Le plus demandé" data-en="Most popular">Le plus demandé</div>
+          <div class="service-icon"><i class="fas fa-store"></i></div>
+          <h3 data-fr="Boutique E-commerce" data-en="E-commerce Store">Boutique E-commerce</h3>
+          <p data-fr="Une boutique en ligne complète pour vendre vos produits 24h/24 partout dans le monde."
+             data-en="A complete online store to sell your products 24/7 anywhere in the world.">
+            Une boutique en ligne complète pour vendre vos produits 24h/24 partout dans le monde.
+          </p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i><span data-fr="Catalogue produits illimité" data-en="Unlimited product catalog">Catalogue produits illimité</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Paiement Stripe / PayPal" data-en="Stripe / PayPal payment">Paiement Stripe / PayPal</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Gestion des commandes" data-en="Order management">Gestion des commandes</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Tableau de bord admin" data-en="Admin dashboard">Tableau de bord admin</span></li>
+          </ul>
+          <a href="#contact" class="service-link" data-fr="En savoir plus →" data-en="Learn more →">En savoir plus →</a>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon"><i class="fas fa-calendar-check"></i></div>
+          <h3 data-fr="Application Sur Mesure" data-en="Custom Application">Application Sur Mesure</h3>
+          <p data-fr="CRM, système de réservation, facturation — des outils métier adaptés à vos besoins spécifiques."
+             data-en="CRM, booking system, invoicing — business tools tailored to your specific needs.">
+            CRM, système de réservation, facturation — des outils métier adaptés à vos besoins spécifiques.
+          </p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i><span data-fr="Développement sur mesure" data-en="Custom development">Développement sur mesure</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Base de données MySQL" data-en="MySQL database">Base de données MySQL</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Interface admin intuitive" data-en="Intuitive admin interface">Interface admin intuitive</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Support & maintenance" data-en="Support & maintenance">Support & maintenance</span></li>
+          </ul>
+          <a href="#contact" class="service-link" data-fr="En savoir plus →" data-en="Learn more →">En savoir plus →</a>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon"><i class="fab fa-wordpress"></i></div>
+          <h3 data-fr="WordPress & CMS" data-en="WordPress & CMS">WordPress & CMS</h3>
+          <p data-fr="Des sites WordPress personnalisés que vous pouvez gérer vous-même facilement."
+             data-en="Custom WordPress sites that you can easily manage yourself.">
+            Des sites WordPress personnalisés que vous pouvez gérer vous-même facilement.
+          </p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i><span data-fr="Thème enfant sur mesure" data-en="Custom child theme">Thème enfant sur mesure</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Plugins essentiels configurés" data-en="Essential plugins configured">Plugins essentiels configurés</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Formation à l'utilisation" data-en="Usage training">Formation à l'utilisation</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Migration & hébergement" data-en="Migration & hosting">Migration & hébergement</span></li>
+          </ul>
+          <a href="#contact" class="service-link" data-fr="En savoir plus →" data-en="Learn more →">En savoir plus →</a>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon"><i class="fas fa-search"></i></div>
+          <h3 data-fr="SEO & Performance" data-en="SEO & Performance">SEO & Performance</h3>
+          <p data-fr="Optimisez votre visibilité sur Google et améliorez la vitesse de votre site."
+             data-en="Optimize your Google visibility and improve your site speed.">
+            Optimisez votre visibilité sur Google et améliorez la vitesse de votre site.
+          </p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i><span data-fr="Audit SEO complet" data-en="Full SEO audit">Audit SEO complet</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Optimisation vitesse" data-en="Speed optimization">Optimisation vitesse</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Google Analytics & Search Console" data-en="Google Analytics & Search Console">Google Analytics & Search Console</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Rapport mensuel" data-en="Monthly report">Rapport mensuel</span></li>
+          </ul>
+          <a href="#contact" class="service-link" data-fr="En savoir plus →" data-en="Learn more →">En savoir plus →</a>
+        </div>
+
+        <div class="service-card fade-up">
+          <div class="service-icon"><i class="fas fa-headset"></i></div>
+          <h3 data-fr="Maintenance & Support" data-en="Maintenance & Support">Maintenance & Support</h3>
+          <p data-fr="Gardez votre site sécurisé, à jour et performant avec notre service mensuel."
+             data-en="Keep your site secure, updated and performant with our monthly service.">
+            Gardez votre site sécurisé, à jour et performant avec notre service mensuel.
+          </p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i><span data-fr="Mises à jour régulières" data-en="Regular updates">Mises à jour régulières</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Sauvegardes automatiques" data-en="Automatic backups">Sauvegardes automatiques</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Support par email & chat" data-en="Email & chat support">Support par email & chat</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Monitoring 24/7" data-en="24/7 monitoring">Monitoring 24/7</span></li>
+          </ul>
+          <a href="#contact" class="service-link" data-fr="En savoir plus →" data-en="Learn more →">En savoir plus →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PORTFOLIO ===== -->
+  <section class="portfolio-section" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-fr="Notre travail" data-en="Our work">Notre travail</span>
+        <h2 data-fr="Nos <span>Réalisations</span>" data-en="Our <span>Portfolio</span>">Nos <span>Réalisations</span></h2>
+        <p data-fr="Quelques projets dont nous sommes fiers" data-en="Some projects we're proud of">Quelques projets dont nous sommes fiers</p>
+      </div>
+      <div class="portfolio-grid">
+
+        <div class="portfolio-card fade-up">
+          <div class="portfolio-img" style="background:linear-gradient(135deg,#ff9a9e,#fad0c4);">
+            <div class="portfolio-overlay">
+              <span class="portfolio-cat" data-fr="E-commerce" data-en="E-commerce">E-commerce</span>
+              <h4>BelleShop Cosmétiques</h4>
+              <p data-fr="Boutique en ligne avec 200+ produits" data-en="Online store with 200+ products">Boutique en ligne avec 200+ produits</p>
+            </div>
+            <div class="portfolio-emoji">💄</div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-tags"><span>WordPress</span><span>WooCommerce</span></div>
+          </div>
+        </div>
+
+        <div class="portfolio-card fade-up">
+          <div class="portfolio-img" style="background:linear-gradient(135deg,#a1c4fd,#c2e9fb);">
+            <div class="portfolio-overlay">
+              <span class="portfolio-cat" data-fr="Santé" data-en="Healthcare">Santé</span>
+              <h4>Clinique Sourire</h4>
+              <p data-fr="Système RDV dentaire en ligne" data-en="Online dental appointment system">Système RDV dentaire en ligne</p>
+            </div>
+            <div class="portfolio-emoji">🦷</div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-tags"><span>PHP</span><span>MySQL</span></div>
+          </div>
+        </div>
+
+        <div class="portfolio-card fade-up">
+          <div class="portfolio-img" style="background:linear-gradient(135deg,#ffecd2,#fcb69f);">
+            <div class="portfolio-overlay">
+              <span class="portfolio-cat" data-fr="Restaurant" data-en="Restaurant">Restaurant</span>
+              <h4>Le Platane MTL</h4>
+              <p data-fr="Site vitrine + réservation en ligne" data-en="Showcase + online reservation">Site vitrine + réservation en ligne</p>
+            </div>
+            <div class="portfolio-emoji">🍽️</div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-tags"><span>Laravel</span><span>Bootstrap</span></div>
+          </div>
+        </div>
+
+        <div class="portfolio-card fade-up">
+          <div class="portfolio-img" style="background:linear-gradient(135deg,#d4fc79,#96e6a1);">
+            <div class="portfolio-overlay">
+              <span class="portfolio-cat" data-fr="Automobile" data-en="Automotive">Automobile</span>
+              <h4>GarageXpress MTL</h4>
+              <p data-fr="Devis & RDV auto en ligne" data-en="Online auto quotes & appointments">Devis & RDV auto en ligne</p>
+            </div>
+            <div class="portfolio-emoji">🔧</div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-tags"><span>PHP</span><span>MySQL</span></div>
+          </div>
+        </div>
+
+        <div class="portfolio-card fade-up">
+          <div class="portfolio-img" style="background:linear-gradient(135deg,#e0c3fc,#8ec5fc);">
+            <div class="portfolio-overlay">
+              <span class="portfolio-cat" data-fr="Immobilier" data-en="Real Estate">Immobilier</span>
+              <h4>ImmoMontréal Pro</h4>
+              <p data-fr="Listings propriétés + filtre avancé" data-en="Property listings + advanced filter">Listings propriétés + filtre avancé</p>
+            </div>
+            <div class="portfolio-emoji">🏠</div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-tags"><span>Vue.js</span><span>Laravel API</span></div>
+          </div>
+        </div>
+
+        <div class="portfolio-card fade-up">
+          <div class="portfolio-img" style="background:linear-gradient(135deg,#fbc2eb,#a6c1ee);">
+            <div class="portfolio-overlay">
+              <span class="portfolio-cat" data-fr="Éducation" data-en="Education">Éducation</span>
+              <h4>École Transport Plus</h4>
+              <p data-fr="Réservation de cours en ligne" data-en="Online course booking system">Réservation de cours en ligne</p>
+            </div>
+            <div class="portfolio-emoji">🚗</div>
+          </div>
+          <div class="portfolio-info">
+            <div class="portfolio-tags"><span>PHP</span><span>FullCalendar</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-fr="Nos forfaits" data-en="Our plans">Nos forfaits</span>
+        <h2 data-fr="Tarifs <span>Transparents</span>" data-en="<span>Transparent</span> Pricing">Tarifs <span>Transparents</span></h2>
+        <p data-fr="Des forfaits clairs sans surprise" data-en="Clear packages with no surprises">
+          Des forfaits clairs sans surprise
+        </p>
+      </div>
+      <div class="pricing-grid">
+
+        <div class="pricing-card fade-up">
+          <div class="pricing-header">
+            <h3>Starter</h3>
+            <div class="pricing-price">
+              <span class="price-amount">499$</span>
+              <span class="price-period" data-fr="projet" data-en="project">projet</span>
+            </div>
+            <p data-fr="Idéal pour les petites entreprises et freelances"
+               data-en="Ideal for small businesses and freelancers">
+              Idéal pour les petites entreprises et freelances
+            </p>
+          </div>
+          <ul class="pricing-list">
+            <li><i class="fas fa-check"></i><span data-fr="Site vitrine 5 pages" data-en="5-page showcase site">Site vitrine 5 pages</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Design responsive" data-en="Responsive design">Design responsive</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Formulaire de contact" data-en="Contact form">Formulaire de contact</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="SEO de base" data-en="Basic SEO">SEO de base</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Livraison en 7 jours" data-en="7-day delivery">Livraison en 7 jours</span></li>
+            <li class="disabled"><i class="fas fa-times"></i><span>E-commerce</span></li>
+            <li class="disabled"><i class="fas fa-times"></i><span data-fr="Application sur mesure" data-en="Custom application">Application sur mesure</span></li>
+          </ul>
+          <a href="#contact" class="btn btn-outline btn-full" data-fr="Choisir Starter" data-en="Choose Starter">Choisir Starter</a>
+        </div>
+
+        <div class="pricing-card featured fade-up">
+          <div class="pricing-badge" data-fr="Recommandé" data-en="Recommended">Recommandé</div>
+          <div class="pricing-header">
+            <h3>Business</h3>
+            <div class="pricing-price">
+              <span class="price-amount">999$</span>
+              <span class="price-period" data-fr="projet" data-en="project">projet</span>
+            </div>
+            <p data-fr="Pour les entreprises qui veulent se démarquer en ligne"
+               data-en="For businesses that want to stand out online">
+              Pour les entreprises qui veulent se démarquer en ligne
+            </p>
+          </div>
+          <ul class="pricing-list">
+            <li><i class="fas fa-check"></i><span data-fr="Site complet 10 pages" data-en="Complete 10-page site">Site complet 10 pages</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Design premium sur mesure" data-en="Custom premium design">Design premium sur mesure</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="E-commerce jusqu'à 50 produits" data-en="E-commerce up to 50 products">E-commerce jusqu'à 50 produits</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="SEO avancé + Google Analytics" data-en="Advanced SEO + Google Analytics">SEO avancé + Google Analytics</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Livraison en 14 jours" data-en="14-day delivery">Livraison en 14 jours</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="1 mois de support inclus" data-en="1 month support included">1 mois de support inclus</span></li>
+            <li class="disabled"><i class="fas fa-times"></i><span data-fr="Application sur mesure" data-en="Custom application">Application sur mesure</span></li>
+          </ul>
+          <a href="#contact" class="btn btn-primary btn-full" data-fr="Choisir Business" data-en="Choose Business">Choisir Business</a>
+        </div>
+
+        <div class="pricing-card fade-up">
+          <div class="pricing-header">
+            <h3>Premium</h3>
+            <div class="pricing-price">
+              <span class="price-amount" data-fr="Sur devis" data-en="On quote">Sur devis</span>
+            </div>
+            <p data-fr="Pour les projets complexes et les grandes entreprises"
+               data-en="For complex projects and large businesses">
+              Pour les projets complexes et les grandes entreprises
+            </p>
+          </div>
+          <ul class="pricing-list">
+            <li><i class="fas fa-check"></i><span data-fr="Application web sur mesure" data-en="Custom web application">Application web sur mesure</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="E-commerce illimité" data-en="Unlimited e-commerce">E-commerce illimité</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="CRM / ERP intégré" data-en="Integrated CRM / ERP">CRM / ERP intégré</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="API REST sur mesure" data-en="Custom REST API">API REST sur mesure</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Maintenance 3 mois inclus" data-en="3 months maintenance included">Maintenance 3 mois inclus</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Support prioritaire" data-en="Priority support">Support prioritaire</span></li>
+            <li><i class="fas fa-check"></i><span data-fr="Délai selon le projet" data-en="Timeline per project">Délai selon le projet</span></li>
+          </ul>
+          <a href="#contact" class="btn btn-outline btn-full" data-fr="Demander un devis" data-en="Request a quote">Demander un devis</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-fr="Ce qu'ils disent" data-en="What they say">Ce qu'ils disent</span>
+        <h2 data-fr="Avis <span>Clients</span>" data-en="Client <span>Reviews</span>">Avis <span>Clients</span></h2>
+      </div>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-stars">★★★★★</div>
+          <p data-fr='"VelixoxoWeb a transformé notre restaurant en ligne. Les réservations ont augmenté de 40% en 2 mois !"'
+             data-en='"VelixoxoWeb transformed our restaurant online. Reservations increased by 40% in 2 months!"'>
+            "VelixoxoWeb a transformé notre restaurant en ligne. Les réservations ont augmenté de 40% en 2 mois !"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SM</div>
+            <div>
+              <strong>Sophie Martin</strong>
+              <span data-fr="Propriétaire, Le Platane MTL" data-en="Owner, Le Platane MTL">Propriétaire, Le Platane MTL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-stars">★★★★★</div>
+          <p data-fr='"Notre boutique a généré 15 000$ de ventes dès le premier mois. L&apos;équipe VelixoxoWeb est professionnelle et à l&apos;écoute !"'
+             data-en='"Our store generated $15,000 in sales in the first month. The VelixoxoWeb team is professional and attentive!"'>
+            "Notre boutique a généré 15 000$ de ventes dès le premier mois. L'équipe VelixoxoWeb est professionnelle et à l'écoute !"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SJ</div>
+            <div>
+              <strong>Steeve Jean</strong>
+              <span data-fr="CEO, BelleShop Cosmétiques" data-en="CEO, BelleShop Cosmetics">CEO, BelleShop Cosmétiques</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-up">
+          <div class="testimonial-stars">★★★★★</div>
+          <p data-fr='"Le système de réservation a révolutionné notre clinique. Plus de double-booking et patients ravis !"'
+             data-en='"The booking system revolutionized our clinic. No more double-booking and happy patients!"'>
+            "Le système de réservation a révolutionné notre clinique. Plus de double-booking et patients ravis !"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">DL</div>
+            <div>
+              <strong>Dr. Leclerc</strong>
+              <span data-fr="Dentiste, Clinique Sourire" data-en="Dentist, Clinique Sourire">Dentiste, Clinique Sourire</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-left fade-up">
+          <span class="section-tag" data-fr="Parlons-en" data-en="Let's talk">Parlons-en</span>
+          <h2 data-fr="Démarrons votre <span>projet</span> ensemble"
+              data-en="Let's start your <span>project</span> together">
+            Démarrons votre <span>projet</span> ensemble
+          </h2>
+          <p data-fr="Décrivez-nous votre projet et recevez une proposition gratuite sous 24h."
+             data-en="Describe your project and receive a free proposal within 24h.">
+            Décrivez-nous votre projet et recevez une proposition gratuite sous 24h.
+          </p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <strong data-fr="Email" data-en="Email">Email</strong>
+                <span data-fr="Via le formulaire ci-contre" data-en="Via the form opposite">Via le formulaire ci-contre</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <strong data-fr="Localisation" data-en="Location">Localisation</strong>
+                <span>Montréal, Québec, Canada</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon"><i class="fas fa-clock"></i></div>
+              <div>
+                <strong data-fr="Disponibilité" data-en="Availability">Disponibilité</strong>
+                <span data-fr="Lun–Ven, 9h–18h (EST)" data-en="Mon–Fri, 9am–6pm (EST)">Lun–Ven, 9h–18h (EST)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-right fade-up">
+          <form class="contact-form" id="contact-form" action="" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label data-fr="Votre nom" data-en="Your name">Votre nom</label>
+                <input type="text" name="nom" placeholder="Jean Tremblay" required />
+              </div>
+              <div class="form-group">
+                <label data-fr="Votre email" data-en="Your email">Votre email</label>
+                <input type="email" name="email" placeholder="jean@exemple.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label data-fr="Type de projet" data-en="Project type">Type de projet</label>
+              <select name="projet" required>
+                <option value=""         data-fr="— Sélectionnez —"       data-en="— Select —">— Sélectionnez —</option>
+                <option value="vitrine"  data-fr="Site Vitrine"            data-en="Showcase Website">Site Vitrine</option>
+                <option value="ecom"     data-fr="Boutique E-commerce"     data-en="E-commerce Store">Boutique E-commerce</option>
+                <option value="app"      data-fr="Application Sur Mesure"  data-en="Custom Application">Application Sur Mesure</option>
+                <option value="wp"       data-fr="WordPress / CMS"         data-en="WordPress / CMS">WordPress / CMS</option>
+                <option value="autre"    data-fr="Autre"                   data-en="Other">Autre</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label data-fr="Décrivez votre projet" data-en="Describe your project">Décrivez votre projet</label>
+              <textarea name="message" rows="5" placeholder="Mon projet consiste à..." required></textarea>
+            </div>
+            <!-- Honeypot anti-spam -->
+            <div style="display:none;" aria-hidden="true">
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fas fa-paper-plane"></i>
+              <span data-fr="Envoyer ma demande" data-en="Send my request">Envoyer ma demande</span>
+            </button>
+            <div id="form-msg" class="form-msg"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="nav-logo">Velixoxo<span>Web</span></a>
+          <p data-fr="Agence web spécialisée en création de sites modernes et applications sur mesure à Montréal."
+             data-en="Web agency specializing in modern website creation and custom applications in Montreal.">
+            Agence web spécialisée en création de sites modernes et applications sur mesure à Montréal.
+          </p>
+        </div>
+        <div class="footer-links-col">
+          <h4 data-fr="Services" data-en="Services">Services</h4>
+          <ul>
+            <li><a href="#services" data-fr="Site Vitrine"           data-en="Showcase Website">Site Vitrine</a></li>
+            <li><a href="#services" data-fr="E-commerce"             data-en="E-commerce">E-commerce</a></li>
+            <li><a href="#services" data-fr="Application Sur Mesure" data-en="Custom Application">Application Sur Mesure</a></li>
+            <li><a href="#services" data-fr="WordPress & CMS"        data-en="WordPress & CMS">WordPress & CMS</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4 data-fr="Navigation" data-en="Navigation">Navigation</h4>
+          <ul>
+            <li><a href="#portfolio"    data-fr="Réalisations" data-en="Portfolio">Réalisations</a></li>
+            <li><a href="#pricing"      data-fr="Tarifs"       data-en="Pricing">Tarifs</a></li>
+            <li><a href="#testimonials" data-fr="Avis clients" data-en="Reviews">Avis clients</a></li>
+            <li><a href="#contact"      data-fr="Contact"      data-en="Contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 <strong>VelixoxoWeb</strong> —
+          <span data-fr="Tous droits réservés" data-en="All rights reserved">Tous droits réservés</span>
+          | Montréal, QC
+        </p>
+        <p class="footer-credit">
+          <span data-fr="Site démo créé par" data-en="Demo site created by">Site démo créé par</span>
+          <a href="https://devwebmtl.github.io" target="_blank">DevWebMTL</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-top" id="back-top"><i class="fas fa-arrow-up"></i></button>
+  <script src="script.js"></script>
+</body>
+</html>
