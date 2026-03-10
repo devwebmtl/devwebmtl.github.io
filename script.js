@@ -26,62 +26,81 @@ function typeEffect() {
 }
 typeEffect();
 
-
 // ===== NAVBAR SCROLL =====
 const navbar = document.getElementById("navbar");
 window.addEventListener("scroll", () => {
   navbar?.classList.toggle("scrolled", window.scrollY > 50);
 });
 
-
 // ===== HAMBURGER =====
 const hamburger = document.getElementById("hamburger");
-const navLinks  = document.getElementById("nav-links");
+const navLinks = document.getElementById("nav-links");
 hamburger?.addEventListener("click", () => navLinks.classList.toggle("open"));
 navLinks?.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("open")));
 
-
-// ===== FEATURED SLIDER =====
+// ===== FEATURED SLIDER (nouveau — fs-slide) =====
 (function () {
-  const slides   = document.querySelectorAll(".slide");
-  const dots     = document.querySelectorAll(".sl-dot");
-  const progress = document.getElementById("sl-progress");
-  let current = 0, autoTimer = null;
-  const total = slides.length;
+  var slides  = document.querySelectorAll('.fs-slide');
+  var dots    = document.querySelectorAll('.fs-dot');
+  var counter = document.getElementById('fs-cur');
+  var btnPrev = document.getElementById('fs-prev');
+  var btnNext = document.getElementById('fs-next');
+  var total   = slides.length;
+  var cur     = 0;
+  var timer   = null;
 
-  function goTo(index) {
-    slides[current].classList.remove("active");
-    dots[current].classList.remove("active");
-    current = (index + total) % total;
-    slides[current].classList.add("active");
-    dots[current].classList.add("active");
-    if (progress) progress.style.width = ((current + 1) / total * 100) + "%";
+  if (!slides.length) return;
+
+  function goTo(n) {
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur = (n + total) % total;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+    if (counter) counter.textContent = cur + 1;
   }
 
-  function startAuto() { autoTimer = setInterval(() => goTo(current + 1), 5000); }
-  function stopAuto()  { clearInterval(autoTimer); }
+  function autoPlay() {
+    clearInterval(timer);
+    timer = setInterval(function () { goTo(cur + 1); }, 5000);
+  }
 
-  document.getElementById("sl-prev")?.addEventListener("click", () => { stopAuto(); goTo(current - 1); startAuto(); });
-  document.getElementById("sl-next")?.addEventListener("click", () => { stopAuto(); goTo(current + 1); startAuto(); });
-  dots.forEach(d => d.addEventListener("click", () => { stopAuto(); goTo(parseInt(d.dataset.dot)); startAuto(); }));
-
-  // Swipe mobile
-  let touchStartX = 0;
-  const wrapper = document.querySelector(".slider-wrapper");
-  wrapper?.addEventListener("touchstart", e => { touchStartX = e.changedTouches[0].screenX; });
-  wrapper?.addEventListener("touchend", e => {
-    const diff = touchStartX - e.changedTouches[0].screenX;
-    if (Math.abs(diff) > 50) { stopAuto(); goTo(diff > 0 ? current + 1 : current - 1); startAuto(); }
+  if (btnPrev) btnPrev.addEventListener('click', function () { goTo(cur - 1); autoPlay(); });
+  if (btnNext) btnNext.addEventListener('click', function () { goTo(cur + 1); autoPlay(); });
+  dots.forEach(function (d) {
+    d.addEventListener('click', function () { goTo(parseInt(d.dataset.goto)); autoPlay(); });
   });
 
-  wrapper?.addEventListener("mouseenter", stopAuto);
-  wrapper?.addEventListener("mouseleave", startAuto);
-  startAuto();
+  // Swipe mobile
+  var startX = 0;
+  var sliderEl = document.querySelector('.fs-slides');
+  if (sliderEl) {
+    sliderEl.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+    sliderEl.addEventListener('touchend', function (e) {
+      var diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) { diff > 0 ? goTo(cur + 1) : goTo(cur - 1); autoPlay(); }
+    });
+  }
+
+  // Lightbox helpers
+  window.fsOpenLb = function (id) {
+    var lb = document.getElementById(id);
+    if (lb) lb.style.display = 'flex';
+  };
+  window.fsCloseLb = function (el) {
+    if (el) el.style.display = 'none';
+  };
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.fs-lb').forEach(function (lb) { lb.style.display = 'none'; });
+    }
+  });
+
+  autoPlay();
 })();
 
-
 // ===== PROJECT FILTER =====
-const filterBtns   = document.querySelectorAll(".filter-btn");
+const filterBtns = document.querySelectorAll(".filter-btn");
 const projectCards = document.querySelectorAll(".project-card");
 filterBtns.forEach(btn => {
   btn.addEventListener("click", () => {
@@ -95,9 +114,8 @@ filterBtns.forEach(btn => {
   });
 });
 
-
 // ===== SCROLL FADE-UP ANIMATION =====
-const fadeEls = document.querySelectorAll(".service-card, .project-card, .skill-category, .slide-info");
+const fadeEls = document.querySelectorAll(".service-card, .project-card, .skill-category");
 fadeEls.forEach(el => el.classList.add("fade-up"));
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => {
@@ -106,38 +124,29 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 fadeEls.forEach(el => observer.observe(el));
 
-
 // ===== BACK TO TOP =====
 const backTop = document.getElementById("back-top");
 window.addEventListener("scroll", () => backTop?.classList.toggle("visible", window.scrollY > 400));
 backTop?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-
 // ===== CONTACT FORM SÉCURISÉ =====
-const form    = document.getElementById("contact-form");
+const form = document.getElementById("contact-form");
 const formMsg = document.getElementById("form-msg");
 const honeypot = document.getElementById("website");
 
-// Sanitisation — supprime balises HTML
 function sanitize(str) {
   const div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
 
-// Limite envoi : max 3 soumissions par session
 let submitCount = parseInt(sessionStorage.getItem("submitCount") || "0");
 
 form?.addEventListener("submit", async e => {
   e.preventDefault();
 
-  // 1. Vérif honeypot — si rempli = bot
-  if (honeypot && honeypot.value !== "") {
-    console.log("Bot détecté");
-    return;
-  }
+  if (honeypot && honeypot.value !== "") { console.log("Bot détecté"); return; }
 
-  // 2. Vérif Turnstile — token obligatoire
   const turnstileResponse = form.querySelector('[name="cf-turnstile-response"]');
   if (!turnstileResponse || !turnstileResponse.value) {
     formMsg.className = "form-msg error";
@@ -145,36 +154,27 @@ form?.addEventListener("submit", async e => {
     return;
   }
 
-  // 3. Limite anti-spam session
   if (submitCount >= 3) {
     formMsg.className = "form-msg error";
     formMsg.textContent = "⚠️ Trop de tentatives. Réessayez plus tard.";
     return;
   }
 
-  // 4. Validation + sanitisation
   const nom     = sanitize(document.getElementById("nom").value.trim());
   const email   = sanitize(document.getElementById("email").value.trim());
   const message = sanitize(document.getElementById("message").value.trim());
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   if (nom.length < 2) {
-    formMsg.className = "form-msg error";
-    formMsg.textContent = "❌ Nom trop court.";
-    return;
+    formMsg.className = "form-msg error"; formMsg.textContent = "❌ Nom trop court."; return;
   }
   if (!emailRegex.test(email)) {
-    formMsg.className = "form-msg error";
-    formMsg.textContent = "❌ Email invalide.";
-    return;
+    formMsg.className = "form-msg error"; formMsg.textContent = "❌ Email invalide."; return;
   }
   if (message.length < 10) {
-    formMsg.className = "form-msg error";
-    formMsg.textContent = "❌ Message trop court (min. 10 caractères).";
-    return;
+    formMsg.className = "form-msg error"; formMsg.textContent = "❌ Message trop court (min. 10 caractères)."; return;
   }
 
-  // 5. Envoi
   const btn = form.querySelector("button[type=submit]");
   btn.disabled = true;
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
@@ -191,11 +191,8 @@ form?.addEventListener("submit", async e => {
       form.reset();
       submitCount++;
       sessionStorage.setItem("submitCount", submitCount);
-      // Reset Turnstile widget après envoi réussi
       if (window.turnstile) window.turnstile.reset();
-    } else {
-      throw new Error();
-    }
+    } else { throw new Error(); }
   } catch {
     formMsg.className = "form-msg error";
     formMsg.textContent = "❌ Erreur d'envoi. Veuillez réessayer dans quelques instants.";
